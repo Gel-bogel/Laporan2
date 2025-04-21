@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>LAPORAN TEORI</title>
+  <style id="style-mode">
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 40px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .section {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .toggle-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+    }
+
+    h3 {
+      cursor: pointer;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>LAPORAN TEORI</h1>
+  <h2>Shadiq Athallah | 202332086</h2>
+
+  <button class="toggle-btn" onclick="switchMode()">Ganti Mode Tampilan</button>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">1. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
+    <div>
+      <p>CSS digunakan untuk mengatur tampilan web agar menarik dan konsisten. JavaScript digunakan untuk membuat halaman menjadi interaktif dan dinamis seperti validasi form, animasi, atau manipulasi elemen.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">2. Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+    <div>
+      <p>CSS dan JavaScript dapat diintegrasikan secara inline, internal, maupun eksternal melalui tag &lt;style&gt;, &lt;script&gt;, &lt;link&gt;, dan &lt;script src&gt;.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">3. Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
+    <div>
+      <p>Keuntungan CSS: memisahkan tampilan dan konten, mudah dipelihara, dan mendukung responsivitas. Keuntungan JavaScript: membuat web interaktif, memproses data real-time, dan meningkatkan pengalaman pengguna.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">4. Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
+    <div>
+      <p>Bootstrap menyediakan komponen siap pakai, desain responsif otomatis, tampilan konsisten, dan menghemat waktu pengembangan.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3 onclick="toggleSection(this)">5. Berikan salah satu contoh penggunaan Bootstrap lalu jelaskan apa fungsinya serta berikan screenshot hasil running di web-nya!</h3>
+    <div>
+      <p>Contoh penggunaan tombol Bootstrap:</p>
+      <pre>
+&lt;button class="btn btn-primary"&gt;Klik Saya&lt;/button&gt;
+      </pre>
+      <p>Fungsi: memberikan tampilan tombol yang menarik dan konsisten sesuai desain Bootstrap.</p>
+      <p><strong>Screenshot:</strong> (Silakan tambahkan gambar hasil running di sini)</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(header) {
+      const content = header.nextElementSibling;
+      const confirmHide = confirm("Apakah Anda ingin menyembunyikan isi bagian ini?");
+      if (confirmHide) {
+        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+      }
+    }
+
+    let cleanMode = true;
+    function switchMode() {
+      const style = document.getElementById('style-mode');
+      if (cleanMode) {
+        style.innerHTML = `
+          body { background-color: #ff00ff; color: #00ff00; font-family: 'Comic Sans MS'; }
+          h1, h2, h3 { text-align: left; color: red; }
+          .section { border: dashed 3px yellow; background-color: cyan; padding: 5px; }
+          .toggle-btn { background-color: black; color: yellow; font-family: monospace; }
+          h3 { cursor: pointer; }
+        `;
+      } else {
+        style.innerHTML = `
+          body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 40px;
+          }
+          h1, h2 {
+            text-align: center;
+          }
+          .section {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+          }
+          .toggle-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+          }
+          h3 {
+            cursor: pointer;
+            color: #007BFF;
+          }
+        `;
+      }
+      cleanMode = !cleanMode;
+    }
+  </script>
+
+</body>
+</html>
